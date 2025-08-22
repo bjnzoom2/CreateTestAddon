@@ -1,7 +1,14 @@
 package net.bjnzoom2.createtestaddon;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.Registrate;
+import net.bjnzoom2.createtestaddon.block.ModBlocks;
+import net.bjnzoom2.createtestaddon.item.ModCreativeModeTabs;
+import net.bjnzoom2.createtestaddon.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,11 +33,16 @@ public class CreateTestAddon {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public CreateTestAddon(FMLJavaModLoadingContext context) {
+        Registrate registrate = Registrate.create(MOD_ID);
+
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeModeTabs.register(registrate, modEventBus);
 
+        ModItems.register(registrate);
+        ModBlocks.register(registrate);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

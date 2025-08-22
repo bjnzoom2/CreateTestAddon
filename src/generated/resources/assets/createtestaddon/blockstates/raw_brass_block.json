@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createtestaddon:block/raw_brass_block"
+    }
+  }
+}

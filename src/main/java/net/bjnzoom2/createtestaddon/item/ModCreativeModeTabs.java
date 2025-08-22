@@ -21,8 +21,8 @@ public class ModCreativeModeTabs {
     public static void register(Registrate REGISTRATE, IEventBus eventBus) {
         CREATE_TEST_ADDON = CREATIVE_MODE_TABS.register("create_test_addon",
                 () -> CreativeModeTab.builder()
-                        .title(Component.translatable("creativetab.createtestaddon.create_test_addon"))
-                        .withTabsAfter(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
+                        .title(Component.translatable("itemGroup.createtestaddon.create_test_addon"))
+                        .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
                         .icon(ModItems.RAW_BRASS::asStack)
                         .displayItems((b, output) -> {
                             for (RegistryEntry<Item> item : REGISTRATE.getAll(Registries.ITEM)) {

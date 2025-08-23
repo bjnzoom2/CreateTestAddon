@@ -1,0 +1,37 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    },
+    {
+      "item": "createtestaddon:raw_brass"
+    }
+  ],
+  "results": [
+    {
+      "item": "createtestaddon:raw_brass_block"
+    }
+  ]
+}

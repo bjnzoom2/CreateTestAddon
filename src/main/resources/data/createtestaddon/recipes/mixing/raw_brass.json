@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:raw_copper"
+    },
+    {
+      "item": "create:raw_zinc"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "createtestaddon:raw_brass"
+    }
+  ]
+}

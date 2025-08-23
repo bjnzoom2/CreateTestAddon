@@ -1,0 +1,18 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "createtestaddon:raw_brass"
+    }
+  ],
+  "processingTime": 400,
+  "results": [
+    {
+      "item": "createtestaddon:crushed_raw_brass"
+    },
+    {
+      "chance": 0.75,
+      "item": "create:experience_nugget"
+    }
+  ]
+}

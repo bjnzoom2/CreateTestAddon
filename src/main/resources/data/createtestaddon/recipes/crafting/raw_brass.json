@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "createtestaddon:raw_brass_block"
+    }
+  ],
+  "result": {
+    "item": "createtestaddon:raw_brass",
+    "count": 9
+  }
+}

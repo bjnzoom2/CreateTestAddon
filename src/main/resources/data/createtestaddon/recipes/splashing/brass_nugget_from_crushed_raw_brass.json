@@ -1,0 +1,19 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "createtestaddon:crushed_raw_brass"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "create:brass_nugget"
+    },
+    {
+      "chance": 0.30,
+      "count": 2,
+      "item": "create:brass_nugget"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package net.bjnzoom2.createtestaddon.block;
+package net.bjnzoom2.createtestaddon.registry;
 
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;

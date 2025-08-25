@@ -1,10 +1,14 @@
 package net.bjnzoom2.createtestaddon;
 
 import com.mojang.logging.LogUtils;
-import com.tterrag.registrate.Registrate;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.foundation.item.KineticStats;
+import com.simibubi.create.foundation.item.TooltipModifier;
 import net.bjnzoom2.createtestaddon.registry.ModBlocks;
 import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
 import net.bjnzoom2.createtestaddon.registry.ModItems;
+import net.createmod.catnip.lang.FontHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,17 +30,24 @@ public class CreateTestAddon {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public CreateTestAddon(FMLJavaModLoadingContext context) {
-        Registrate registrate = Registrate.create(MOD_ID);
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID);
 
+    static {
+        REGISTRATE.setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE)
+                .andThen(TooltipModifier.mapNull(KineticStats.create(item))));
+    }
+
+    public CreateTestAddon(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
-        ModCreativeModeTabs.register(registrate, modEventBus);
+        REGISTRATE.registerEventListeners(modEventBus);
 
-        ModItems.register(registrate);
-        ModBlocks.register(registrate);
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register();
+        ModBlocks.register();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

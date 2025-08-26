@@ -9,6 +9,7 @@ import net.bjnzoom2.createtestaddon.registry.ModBlocks;
 import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
 import net.bjnzoom2.createtestaddon.registry.ModItems;
 import net.createmod.catnip.lang.FontHelper;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -62,7 +63,14 @@ public class CreateTestAddon {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RAW_BRASS.get());
+            event.accept(ModItems.CRUSHED_RAW_BRASS.get());
+        }
 
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.RAW_BRASS_BLOCK.get());
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

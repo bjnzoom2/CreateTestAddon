@@ -9,6 +9,7 @@ import net.bjnzoom2.createtestaddon.registry.ModBlocks;
 import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
 import net.bjnzoom2.createtestaddon.registry.ModItems;
 import net.createmod.catnip.lang.FontHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -86,5 +87,9 @@ public class CreateTestAddon {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+    }
+
+    public static ResourceLocation asResource(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 }

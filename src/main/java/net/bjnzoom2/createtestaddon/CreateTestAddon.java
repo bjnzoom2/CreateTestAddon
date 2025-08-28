@@ -5,6 +5,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
+import net.bjnzoom2.createtestaddon.advancements.CTATriggers;
 import net.bjnzoom2.createtestaddon.registry.ModBlocks;
 import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
 import net.bjnzoom2.createtestaddon.registry.ModItems;
@@ -59,7 +60,9 @@ public class CreateTestAddon {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            CTATriggers.register();
+        });
     }
 
     // Add the example block item to the building blocks tab
@@ -89,6 +92,7 @@ public class CreateTestAddon {
         }
     }
 
+    @SuppressWarnings("removal")
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(MOD_ID, path);
     }

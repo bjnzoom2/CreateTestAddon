@@ -6,6 +6,7 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import net.bjnzoom2.createtestaddon.advancements.CTATriggers;
+import net.bjnzoom2.createtestaddon.config.CTAConfigs;
 import net.bjnzoom2.createtestaddon.registry.ModBlocks;
 import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
 import net.bjnzoom2.createtestaddon.registry.ModItems;
@@ -18,8 +19,8 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -40,6 +41,7 @@ public class CreateTestAddon {
                 .andThen(TooltipModifier.mapNull(KineticStats.create(item))));
     }
 
+    @SuppressWarnings("removal")
     public CreateTestAddon(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
@@ -52,11 +54,12 @@ public class CreateTestAddon {
         ModItems.register();
         ModBlocks.register();
 
+        CTAConfigs.register(ModLoadingContext.get());
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

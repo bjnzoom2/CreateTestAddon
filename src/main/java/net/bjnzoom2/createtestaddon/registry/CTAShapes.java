@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CTAShapes {
-    public static final VoxelShaper COG_CRANK = shape(5, 0, 5, 11, 6, 11).add(2, 6, 2, 14, 10, 14).forDirectional();
-    public static final VoxelShaper LARGE_COG_CRANK = shape(5, 0, 5, 11, 6, 11).add(0, 6, 0, 16, 10, 16).forDirectional();
+    public static final VoxelShaper CRANK_WHEEL = shape(5, 0, 5, 11, 6, 11).add(2, 6, 2, 14, 10, 14).forDirectional();
+    public static final VoxelShaper LARGE_CRANK_WHEEL = shape(5, 0, 5, 11, 6, 11).add(0, 6, 0, 16, 10, 16).forDirectional();
 
     private static AllShapes.Builder shape(VoxelShape shape) {
         return new AllShapes.Builder(shape);

@@ -1,16 +1,16 @@
 package net.bjnzoom2.createtestaddon;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.api.registry.CreateRegistries;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import net.bjnzoom2.createtestaddon.advancements.CTATriggers;
 import net.bjnzoom2.createtestaddon.config.CTAConfigs;
-import net.bjnzoom2.createtestaddon.registry.CTABlocks;
-import net.bjnzoom2.createtestaddon.registry.CTACreativeModeTabs;
-import net.bjnzoom2.createtestaddon.registry.CTAItems;
+import net.bjnzoom2.createtestaddon.registry.*;
 import net.createmod.catnip.lang.FontHelper;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,6 +19,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -43,8 +44,9 @@ public class CreateTestAddon {
     }
 
     @SuppressWarnings("removal")
-    public CreateTestAddon(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public CreateTestAddon() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onRegister);
@@ -55,6 +57,8 @@ public class CreateTestAddon {
 
         CTAItems.register();
         CTABlocks.register();
+        CTABlockEntityTypes.register();
+        CTAPartialModels.register();
 
         CTAConfigs.register(ModLoadingContext.get());
 
@@ -62,6 +66,8 @@ public class CreateTestAddon {
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> CreateTestAddonClient.onCtorClient(modEventBus, forgeEventBus));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -93,7 +99,6 @@ public class CreateTestAddon {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
     }
 
@@ -103,6 +108,7 @@ public class CreateTestAddon {
     }
 
     public void onRegister(final RegisterEvent event) {
-
+        if (event.getRegistryKey().equals(CreateRegistries.ITEM_ATTRIBUTE_TYPE))
+            CTAItemAttributes.register();
     }
 }

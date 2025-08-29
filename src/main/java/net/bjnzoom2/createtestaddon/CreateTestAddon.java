@@ -7,9 +7,9 @@ import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import net.bjnzoom2.createtestaddon.advancements.CTATriggers;
 import net.bjnzoom2.createtestaddon.config.CTAConfigs;
-import net.bjnzoom2.createtestaddon.registry.ModBlocks;
-import net.bjnzoom2.createtestaddon.registry.ModCreativeModeTabs;
-import net.bjnzoom2.createtestaddon.registry.ModItems;
+import net.bjnzoom2.createtestaddon.registry.CTABlocks;
+import net.bjnzoom2.createtestaddon.registry.CTACreativeModeTabs;
+import net.bjnzoom2.createtestaddon.registry.CTAItems;
 import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -24,6 +24,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -46,13 +47,14 @@ public class CreateTestAddon {
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::onRegister);
 
         REGISTRATE.registerEventListeners(modEventBus);
 
-        ModCreativeModeTabs.register(modEventBus);
+        CTACreativeModeTabs.register(modEventBus);
 
-        ModItems.register();
-        ModBlocks.register();
+        CTAItems.register();
+        CTABlocks.register();
 
         CTAConfigs.register(ModLoadingContext.get());
 
@@ -71,12 +73,12 @@ public class CreateTestAddon {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.RAW_BRASS.get());
-            event.accept(ModItems.CRUSHED_RAW_BRASS.get());
+            event.accept(CTAItems.RAW_BRASS.get());
+            event.accept(CTAItems.CRUSHED_RAW_BRASS.get());
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.RAW_BRASS_BLOCK.get());
+            event.accept(CTABlocks.RAW_BRASS_BLOCK.get());
         }
     }
 
@@ -98,5 +100,9 @@ public class CreateTestAddon {
     @SuppressWarnings("removal")
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(MOD_ID, path);
+    }
+
+    public void onRegister(final RegisterEvent event) {
+
     }
 }

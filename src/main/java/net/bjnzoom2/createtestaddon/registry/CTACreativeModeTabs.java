@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static net.bjnzoom2.createtestaddon.CreateTestAddon.REGISTRATE;
 
-public class ModCreativeModeTabs {
+public class CTACreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreateTestAddon.MOD_ID);
 
@@ -21,7 +21,7 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.literal("Create: Test Addon"))
                     .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-                    .icon(ModItems.RAW_BRASS::asStack)
+                    .icon(CTAItems.RAW_BRASS::asStack)
                     .displayItems((b, output) -> {
                         for (RegistryEntry<Item> item : REGISTRATE.getAll(Registries.ITEM)) {
                             output.accept(item.get());

@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     public static EnumProperty<Axis> AXIS = CogWheelBlock.AXIS;
@@ -40,7 +41,7 @@ public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
         return largeCog ? CTAShapes.LARGE_CRANK_WHEEL.get(state.getValue(FACING)) : CTAShapes.CRANK_WHEEL.get(state.getValue(FACING));
     }
 
@@ -95,7 +96,7 @@ public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     }
 
     @Override
-    public BlockState mirror(BlockState state, Mirror mirrorIn) {
+    public @NotNull BlockState mirror(BlockState state, Mirror mirrorIn) {
         BlockState newState = super.mirror(state, mirrorIn);
         return newState.setValue(AXIS, newState.getValue(AXIS));
     }

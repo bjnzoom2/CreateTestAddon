@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.infrastructure.config.CStress;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.bjnzoom2.createtestaddon.block.kinetic.crank_wheel.CrankWheelBlock;
+import net.bjnzoom2.createtestaddon.config.CTAStress;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
 
@@ -26,7 +27,7 @@ public class CTABlocks {
             .properties(p -> p.mapColor(MapColor.PODZOL))
             .transform(axeOrPickaxe())
             .blockstate(BlockStateGen.directionalBlockProvider(true))
-            .transform(CStress.setCapacity(8.0))
+            .transform(CTAStress.setCapacity(8.0))
             .onRegister(BlockStressValues.setGeneratorSpeed(32))
             .tag(AllTags.AllBlockTags.BRITTLE.tag)
             .onRegister(ItemUseOverrides::addBlock)
@@ -39,7 +40,7 @@ public class CTABlocks {
             .properties(p -> p.mapColor(MapColor.PODZOL))
             .transform(axeOrPickaxe())
             .blockstate(BlockStateGen.directionalBlockProvider(true))
-            .transform(CStress.setCapacity(8.0))
+            .transform(CTAStress.setCapacity(8.0))
             .onRegister(BlockStressValues.setGeneratorSpeed(32))
             .tag(AllTags.AllBlockTags.BRITTLE.tag)
             .onRegister(ItemUseOverrides::addBlock)

@@ -1,51 +1,33 @@
-[29Aug2025 19:29:32.041] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\luken\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.6, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, createtestaddon, --all, --output, C:\Users\luken\Downloads\CreateTestAddon\src\generated\resources, --existing, C:\Users\luken\Downloads\CreateTestAddon\src\main\resources]
-[29Aug2025 19:29:32.044] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.16 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[29Aug2025 19:29:32.203] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[29Aug2025 19:29:32.276] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/luken/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[29Aug2025 19:29:32.675] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.6\9e86bf67e222253576e982856d9958695725adb5\javafmllanguage-1.20.1-47.4.6.jar is missing mods.toml file
-[29Aug2025 19:29:32.684] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.6\56100545804adc991cc48ab68b86ba46c5873246\lowcodelanguage-1.20.1-47.4.6.jar is missing mods.toml file
-[29Aug2025 19:29:32.693] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.6\fd228d7d879a9da774eda022ea3092cedb5178f1\mclanguage-1.20.1-47.4.6.jar is missing mods.toml file
-[29Aug2025 19:29:32.707] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.6\cefc55ada370ce2f23f92834530eb967c0de1fdd\fmlcore-1.20.1-47.4.6.jar is missing mods.toml file
-[29Aug2025 19:29:33.176] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[29Aug2025 19:29:35.345] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[29Aug2025 19:29:35.355] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\luken\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, createtestaddon, --all, --output, C:\Users\luken\Downloads\CreateTestAddon\src\generated\resources, --existing, C:\Users\luken\Downloads\CreateTestAddon\src\main\resources]
-[29Aug2025 19:29:36.285] [main/INFO] [mixin/]: Remapping refMap backend-flywheel.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
-[29Aug2025 19:29:36.291] [main/INFO] [mixin/]: Remapping refMap flywheel.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
-[29Aug2025 19:29:36.294] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
-[29Aug2025 19:29:36.296] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
-[29Aug2025 19:29:36.304] [main/INFO] [mixin/]: Remapping refMap create.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
-[29Aug2025 19:29:37.307] [main/WARN] [mixin/]: Error loading class: xaero/map/gui/GuiMap (java.lang.ClassNotFoundException: xaero.map.gui.GuiMap)
-[29Aug2025 19:29:37.307] [main/WARN] [mixin/]: @Mixin target xaero.map.gui.GuiMap was not found create.mixins.json:compat.xaeros.XaeroFullscreenMapAccessor
-[29Aug2025 19:29:37.309] [main/WARN] [mixin/]: Error loading class: xaero/map/gui/GuiMap (java.lang.ClassNotFoundException: xaero.map.gui.GuiMap)
-[29Aug2025 19:29:37.310] [main/WARN] [mixin/]: @Mixin target xaero.map.gui.GuiMap was not found create.mixins.json:compat.xaeros.XaeroFullscreenMapMixin
-[29Aug2025 19:29:38.018] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [createtestaddon]
-[29Aug2025 19:29:38.028] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[29Aug2025 19:29:47.067] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.7 initializing! Commit hash: 0ab217b2b99ee8ac0fc740c1effc28935f2a4423
-[29Aug2025 19:29:47.168] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.6, for MC 1.20.1 with MCP 20230612.114412
-[29Aug2025 19:29:47.173] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.6 Initialized
-[29Aug2025 19:29:47.887] [modloading-worker-0/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Failed to create mod instance. ModID: createtestaddon, class net.bjnzoom2.createtestaddon.CreateTestAddon
-java.lang.ExceptionInInitializerError: null
-	at net.bjnzoom2.createtestaddon.CreateTestAddon.<init>(CreateTestAddon.java:59) ~[%23196!/:?]
-	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
-	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?]
-	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.6.jar%23192!/:?]
-	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.6.jar%23195!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-Caused by: java.lang.IllegalStateException: Non-Create blocks cannot be added to Create's config.
-	at com.simibubi.create.infrastructure.config.CStress.assertFromCreate(CStress.java:91) ~[create-1.20.1-6.0.7-192_mapped_parchment_2023.09.03-1.20.1-slim.jar%23198!/:?]
-	at com.simibubi.create.infrastructure.config.CStress.lambda$setCapacity$3(CStress.java:82) ~[create-1.20.1-6.0.7-192_mapped_parchment_2023.09.03-1.20.1-slim.jar%23198!/:?]
-	at com.tterrag.registrate.builders.Builder.transform(Builder.java:206) ~[Registrate-MC1.20-1.3.3_mapped_parchment_2023.09.03-1.20.1.jar%23205!/:?]
-	at net.bjnzoom2.createtestaddon.registry.CTABlocks.<clinit>(CTABlocks.java:29) ~[%23196!/:?]
-	... 15 more
-[29Aug2025 19:29:48.198] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[29Aug2025 19:29:48.220] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 15.79 ms
-[29Aug2025 19:29:51.205] [main/FATAL] [net.minecraftforge.fml.ModLoader/LOADING]: Failed to complete lifecycle event CONSTRUCT, 1 errors found
+[29Aug2025 21:24:06.205] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\luken\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.6, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, createtestaddon, --all, --output, C:\Users\luken\Downloads\CreateTestAddon\src\generated\resources, --existing, C:\Users\luken\Downloads\CreateTestAddon\src\main\resources]
+[29Aug2025 21:24:06.213] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.16 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[29Aug2025 21:24:06.551] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[29Aug2025 21:24:06.711] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/luken/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[29Aug2025 21:24:07.804] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.6\9e86bf67e222253576e982856d9958695725adb5\javafmllanguage-1.20.1-47.4.6.jar is missing mods.toml file
+[29Aug2025 21:24:07.812] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.6\56100545804adc991cc48ab68b86ba46c5873246\lowcodelanguage-1.20.1-47.4.6.jar is missing mods.toml file
+[29Aug2025 21:24:07.821] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.6\fd228d7d879a9da774eda022ea3092cedb5178f1\mclanguage-1.20.1-47.4.6.jar is missing mods.toml file
+[29Aug2025 21:24:07.838] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\luken\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.6\cefc55ada370ce2f23f92834530eb967c0de1fdd\fmlcore-1.20.1-47.4.6.jar is missing mods.toml file
+[29Aug2025 21:24:08.348] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[29Aug2025 21:24:13.894] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[29Aug2025 21:24:13.932] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\luken\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, createtestaddon, --all, --output, C:\Users\luken\Downloads\CreateTestAddon\src\generated\resources, --existing, C:\Users\luken\Downloads\CreateTestAddon\src\main\resources]
+[29Aug2025 21:24:15.229] [main/INFO] [mixin/]: Remapping refMap backend-flywheel.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
+[29Aug2025 21:24:15.234] [main/INFO] [mixin/]: Remapping refMap flywheel.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
+[29Aug2025 21:24:15.237] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
+[29Aug2025 21:24:15.239] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
+[29Aug2025 21:24:15.249] [main/INFO] [mixin/]: Remapping refMap create.refmap.json using C:\Users\luken\Downloads\CreateTestAddon/build/createSrgToMcp/output.srg
+[29Aug2025 21:24:16.796] [main/WARN] [mixin/]: Error loading class: xaero/map/gui/GuiMap (java.lang.ClassNotFoundException: xaero.map.gui.GuiMap)
+[29Aug2025 21:24:16.797] [main/WARN] [mixin/]: @Mixin target xaero.map.gui.GuiMap was not found create.mixins.json:compat.xaeros.XaeroFullscreenMapAccessor
+[29Aug2025 21:24:16.804] [main/WARN] [mixin/]: Error loading class: xaero/map/gui/GuiMap (java.lang.ClassNotFoundException: xaero.map.gui.GuiMap)
+[29Aug2025 21:24:16.804] [main/WARN] [mixin/]: @Mixin target xaero.map.gui.GuiMap was not found create.mixins.json:compat.xaeros.XaeroFullscreenMapMixin
+[29Aug2025 21:24:17.691] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [createtestaddon]
+[29Aug2025 21:24:17.702] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[29Aug2025 21:24:31.545] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.7 initializing! Commit hash: 0ab217b2b99ee8ac0fc740c1effc28935f2a4423
+[29Aug2025 21:24:31.626] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.6, for MC 1.20.1 with MCP 20230612.114412
+[29Aug2025 21:24:31.629] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.6 Initialized
+[29Aug2025 21:24:32.729] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[29Aug2025 21:24:32.747] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 12.25 ms
+[29Aug2025 21:24:39.110] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/luken/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.6_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.6_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[29Aug2025 21:24:39.111] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/luken/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.6_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.6_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[29Aug2025 21:24:39.891] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registrate Provider for createtestaddon [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+[29Aug2025 21:24:40.583] [main/INFO] [net.minecraft.data.DataGenerator/]: Registrate Provider for createtestaddon [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)] finished after 690 ms
+[29Aug2025 21:24:40.583] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 694 ms
+[29Aug2025 21:24:40.600] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 17, old count: 0, new count: 18, removed stale: 0, written: 17

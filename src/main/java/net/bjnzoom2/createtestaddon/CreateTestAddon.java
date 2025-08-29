@@ -49,7 +49,6 @@ public class CreateTestAddon {
         IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::onRegister);
 
         REGISTRATE.registerEventListeners(modEventBus);
 
@@ -94,21 +93,8 @@ public class CreateTestAddon {
 
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-        }
-    }
-
     @SuppressWarnings("removal")
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(MOD_ID, path);
-    }
-
-    public void onRegister(final RegisterEvent event) {
-        if (event.getRegistryKey().equals(CreateRegistries.ITEM_ATTRIBUTE_TYPE))
-            CTAItemAttributes.register();
     }
 }

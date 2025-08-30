@@ -5,7 +5,6 @@ import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.foundation.block.ItemUseOverrides;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
-import com.simibubi.create.infrastructure.config.CStress;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.bjnzoom2.createtestaddon.block.kinetic.crank_wheel.CrankWheelBlock;
 import net.bjnzoom2.createtestaddon.config.CTAStress;

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create:hand_crank"
+    },
+    {
+      "item": "create:cogwheel"
+    }
+  ],
+  "result": {
+    "item": "createtestaddon:crank_wheel",
+    "count": 1
+  }
+}

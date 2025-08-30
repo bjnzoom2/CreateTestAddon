@@ -1,0 +1,11 @@
+{
+  "block.createtestaddon.crank_wheel": "Crank Wheel",
+  "block.createtestaddon.large_crank_wheel": "Large Crank Wheel",
+  "block.createtestaddon.raw_brass_block": "Block of Raw Brass",
+  "item.createtestaddon.crushed_raw_brass": "Crushed Raw Brass",
+  "item.createtestaddon.raw_brass": "Raw Brass",
+  "createtestaddon.ponder.crank_wheel.header": "Generating Rotational Force using Crank Wheels",
+  "createtestaddon.ponder.crank_wheel.text_1": "Crank Wheels can be used by players to apply rotational force manually",
+  "createtestaddon.ponder.crank_wheel.text_2": "Hold Right-Click to rotate it Counter-Clockwise",
+  "createtestaddon.ponder.crank_wheel.text_3": "Sneak and Hold Right-Click to rotate it Clockwise"
+}

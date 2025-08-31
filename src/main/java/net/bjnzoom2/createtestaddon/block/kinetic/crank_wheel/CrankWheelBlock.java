@@ -8,6 +8,7 @@ import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import net.bjnzoom2.createtestaddon.registry.CTABlockEntityTypes;
 import net.bjnzoom2.createtestaddon.registry.CTAShapes;
 import net.createmod.catnip.data.Iterate;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -23,8 +24,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     public static EnumProperty<Axis> AXIS = CogWheelBlock.AXIS;
     public final boolean largeCog;
@@ -41,7 +45,7 @@ public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     }
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
         return largeCog ? CTAShapes.LARGE_CRANK_WHEEL.get(state.getValue(FACING)) : CTAShapes.CRANK_WHEEL.get(state.getValue(FACING));
     }
 
@@ -96,7 +100,7 @@ public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
     }
 
     @Override
-    public @NotNull BlockState mirror(BlockState state, Mirror mirrorIn) {
+    public BlockState mirror(BlockState state, Mirror mirrorIn) {
         BlockState newState = super.mirror(state, mirrorIn);
         return newState.setValue(AXIS, newState.getValue(AXIS));
     }

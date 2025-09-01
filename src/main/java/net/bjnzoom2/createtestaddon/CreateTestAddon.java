@@ -85,6 +85,11 @@ public class CreateTestAddon {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(CTABlocks.RAW_BRASS_BLOCK.get());
         }
+
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(CTABlocks.CRANK_WHEEL.get());
+            event.accept(CTABlocks.LARGE_CRANK_WHEEL.get());
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

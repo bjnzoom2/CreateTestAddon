@@ -2,17 +2,25 @@ package net.bjnzoom2.createtestaddon.block.kinetic.crank_wheel;
 
 import static com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock.isValidCogwheelPosition;
 import static net.minecraft.core.Direction.Axis;
+
+import com.simibubi.create.AllItems;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
+import com.simibubi.create.foundation.advancement.AllAdvancements;
+import net.bjnzoom2.createtestaddon.config.CTAConfigs;
 import net.bjnzoom2.createtestaddon.registry.CTABlockEntityTypes;
 import net.bjnzoom2.createtestaddon.registry.CTAShapes;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +30,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -125,5 +134,28 @@ public class CrankWheelBlock extends HandCrankBlock implements ICogWheel {
         public Large(Properties properties) {
             super(properties, true);
         }
+    }
+
+    @Override
+    public int getRotationSpeed() {
+        return 32;
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn,
+                                 BlockHitResult hit) {
+        if (player.isSpectator())
+            return InteractionResult.PASS;
+
+        withBlockEntityDo(worldIn, pos, be -> be.turn(player.isShiftKeyDown()));
+        if (!player.getItemInHand(handIn)
+                .is(AllItems.EXTENDO_GRIP.get()))
+            player.causeFoodExhaustion(getRotationSpeed() * CTAConfigs.server().kinetics.crankWheelHungerMultiplier.getF());
+
+        if (player.getFoodData()
+                .getFoodLevel() == 0)
+            AllAdvancements.HAND_CRANK.awardTo(player);
+
+        return InteractionResult.SUCCESS;
     }
 }

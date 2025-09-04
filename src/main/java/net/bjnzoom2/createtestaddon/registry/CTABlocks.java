@@ -1,11 +1,16 @@
 package net.bjnzoom2.createtestaddon.registry;
 
+import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.api.stress.BlockStressValues;
+import com.simibubi.create.content.decoration.encasing.CasingBlock;
+import com.simibubi.create.content.decoration.encasing.EncasingRegistry;
 import com.simibubi.create.foundation.block.ItemUseOverrides;
 import com.simibubi.create.foundation.data.BlockStateGen;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.bjnzoom2.createtestaddon.block.encased.CTAEncasedShaftBlock;
 import net.bjnzoom2.createtestaddon.block.kinetic.crank_wheel.CrankWheelBlock;
 import net.bjnzoom2.createtestaddon.config.CTAStress;
 import net.minecraft.world.level.block.Block;
@@ -21,6 +26,16 @@ public class CTABlocks {
             .lang("Block of Raw Brass")
             .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW))
             .simpleItem()
+            .register();
+
+    public static final BlockEntry<CasingBlock> IRON_CASING = REGISTRATE.block("steel_casing", CasingBlock::new)
+            .transform(BuilderTransformers.casing(() -> CTASpriteShifts.IRON_CASING))
+            .register();
+
+    public static final BlockEntry<CTAEncasedShaftBlock> IRON_ENCASED_SHAFT = REGISTRATE.block("steel_encased_shaft", p -> new CTAEncasedShaftBlock(p, IRON_CASING::get))
+            .transform(CTABuilderTransformers.encasedShaft("iron", () -> CTASpriteShifts.IRON_CASING))
+            .transform(EncasingRegistry.addVariantTo(AllBlocks.SHAFT))
+            .transform(axeOrPickaxe())
             .register();
 
     public static final BlockEntry<CrankWheelBlock.Small> CRANK_WHEEL = REGISTRATE.block("crank_wheel", CrankWheelBlock.Small::new)

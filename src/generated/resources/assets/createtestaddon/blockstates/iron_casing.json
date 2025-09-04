@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createtestaddon:block/iron_casing"
+    }
+  }
+}

@@ -18,13 +18,6 @@ public class CTABlockEntityTypes {
             .renderer(() -> HandCrankRenderer::new)
             .register();
 
-    public static final BlockEntityEntry<KineticBlockEntity> CTA_ENCASED_SHAFT = REGISTRATE
-            .blockEntity("cta_encased_shaft", KineticBlockEntity::new)
-            .visual(() -> SingleAxisRotatingVisual::shaft, false)
-            .validBlocks(CTABlocks.IRON_ENCASED_SHAFT)
-            .renderer(() -> ShaftRenderer::new)
-            .register();
-
 
     public static void register() {
     }

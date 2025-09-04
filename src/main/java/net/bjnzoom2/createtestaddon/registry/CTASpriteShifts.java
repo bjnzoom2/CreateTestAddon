@@ -10,7 +10,6 @@ import net.createmod.catnip.render.SpriteShifter;
 
 public class CTASpriteShifts {
     public static final CTSpriteShiftEntry IRON_CASING = omni("iron_casing");
-    public static final CTSpriteShiftEntry IRON_ENCASED_COGWHEEL_SIDE = vertical("iron_encased_cogwheel_side"), IRON_ENCASED_COGWHEEL_OTHERSIDE = horizontal("iron_encased_cogwheel_side");
 
     public static CTSpriteShiftEntry omni(String name) {
         return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
